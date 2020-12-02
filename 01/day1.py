@@ -1,33 +1,29 @@
-IN_FILE = 'input.txt'
+import helpers
 
 
-def read_input():
-    input = []
-    with open('input.txt', 'r') as infile:
-        input = infile.read().splitlines()
-    return input
-
-def part_one(input):
-    for i in input:
-        for j in input:
+def part_one(lines):
+    for i in lines:
+        for j in lines:
             if int(i) + int(j) == 2020:
 
                 return int(i), int(j)
 
-def part_two(input):
-    for i in input:
-        for j in input:
-            for k in input:
+
+def part_two(lines):
+    for i in lines:
+        for j in lines:
+            for k in lines:
                 if int(i) + int(j) + int(k) == 2020:
 
                     return int(i), int(j), int(k)
 
-input = read_input()
+
+lines = helpers.read_input()
 
 # part 1
-i, j = part_one(input)
+i, j = part_one(lines)
 print(f"Part 1:\n\t{i} * {j} = {i * j}")
 
 # part 2
-i, j, k = part_two(input)
+i, j, k = part_two(lines)
 print(f"Part 2:\n\t{i} * {j} * {k} = {i * j * k}")
